@@ -1,0 +1,28 @@
+date=int(input("Введите дату рождения: "))
+month = int(input("Введите месяц рожедения:(1-12)  "))
+if 21<=date<=31 and month == 3 or 1<=date<=20 and month == 4:
+    print("Вы овен")
+elif 21<=date<=30 and month == 4 or 1<=date<=21 and month == 5:
+    print("Вы телец")
+elif 22<=date<=31 and month == 5 or 1<=date<=21 and month == 6:
+    print("Вы близнецы")
+elif 22<=date<=30 and month == 6 or 1<=date<=22 and month == 7:
+    print("Вы рак")
+elif 23<=date<=31 and month == 7 or 1<=date<=21 and month == 8:
+    print("Вы лев")
+elif 22<=date<=31 and month == 8 or 1<=date<=23 and month == 9:
+    print("Вы дева")
+elif 24<=date<=30 and month == 9 or 1<=date<=23 and month == 10:
+    print("Вы весы")
+elif 24<=date<=31 and month == 10 or 1<=date<=22 and month == 11:
+    print("Вы скорпион")
+elif 23<=date<=30 and month == 11 or 1<=date<=22 and month == 12:
+    print("Вы стрелец")
+elif 23<=date<=31 and month == 12 or 1<=date<=20 and month == 1:
+    print("Вы козерог")
+elif 21<=date<=31 and month == 1 or 1<=date<=19 and month == 2:
+    print("Вы водолей")
+elif 20<=date<=29 and month == 2 or 1<=date<=20 and month == 3:
+    print("Вы рыба")
+else:
+    print("Такой даты не существует")
