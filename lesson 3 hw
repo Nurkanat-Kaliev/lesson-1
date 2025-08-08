@@ -1,0 +1,31 @@
+
+english_vowel = "AEIOUYaeiouy"
+russian_vowel = "АЕИОУЫЭЮЯаеиоуыэюя"
+english_consonant = "BCDFGHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz"
+russian_consonant = "БВГДЖЗЙКЛМНПРСТЦЧШЩХЪЬбвгджзйклмнпрстцчшщхъь"
+while True:
+    word = input("Введите любое слово (или введите слово 'stop' для выхода ): ")
+    if word == "stop":
+        print("До свидания !")
+        break
+
+    vowel_count = 0
+    consonant_count = 0
+
+    for letters in word:
+        if letters in english_vowel or letters in russian_vowel:
+            vowel_count += 1
+        elif letters in english_consonant or letters in russian_consonant:
+            consonant_count += 1
+    vowel_percent = vowel_count/len(word)
+    vowel_percent *= 100
+    vowel_percent = round(vowel_percent,2)
+    consonant_percent = consonant_count/len(word)
+    consonant_percent *= 100
+    consonant_percent = round(consonant_percent,2)
+    print(f"Слово: {word}")
+    print(f"Количество букв: {len(word)}")
+    print(f"Гласных букв: {vowel_count}")
+    print(f"Согласных букв: {consonant_count}")
+    print(f"Гласные/Согласные: {vowel_percent}% / {consonant_percent}%")
+
