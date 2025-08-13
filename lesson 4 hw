@@ -1,0 +1,31 @@
+data_tuple = ("h",6.13,"C","e","T","True","k","e",3,'e',1,"g")
+
+letters = []
+numbers = []
+
+for x in data_tuple:
+    if type(x) is float or type(x) is int:
+        numbers.append(x)
+    else:
+        letters.append(x)
+
+numbers.remove(6.13)
+
+letters.pop(4)
+letters.append("True")
+
+numbers.insert(1,2)
+numbers.sort()
+
+letters.reverse()
+change_letter1 = [x.upper() if x=="g" else x for x in letters]
+change_letter2 = [x.lower() if x=="C" else x for x in change_letter1]
+letters = change_letter2
+
+numbers = [x**2 for x in numbers]
+
+letters = tuple(letters)
+numbers = tuple(numbers)
+
+print(letters)
+print(numbers)
