@@ -1,0 +1,28 @@
+data = ("O!", "Megacom", "0705", "Beeline", "0550", "0770", "Katel", "0510", "Fonex", "0543")
+
+designations = []
+codes = []
+
+for every in data:
+    if every.isalpha():
+        designations.append(every)
+    elif every.isdigit():
+        codes.append(every)
+    else:
+        designations.append(every)
+
+operators = {}
+i = 0
+while i < len(designations):
+      operators[designations[i]] = codes[i]
+      i += 1
+
+operators.pop("Fonex")
+operators.pop("Katel")
+
+for key in operators:
+    operators[key] = {operators[key]}
+operators["O!"].update(["0701", "0702"])
+operators["Megacom"].update(["0553", "0551"])
+operators["Beeline"].update(["0777", "0776"])
+print(operators)
