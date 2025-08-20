@@ -1,0 +1,31 @@
+'''Первое задание: пароль'''
+def password(user):
+     symbols  = sum(1 for x in user if not x.isalnum())
+     if (
+         len(user) >= 6
+         and any(x.isdigit() for x in user)
+         and any(x.isupper() for x in user)
+         and any(x.islower() for x in user)
+         and symbols == 2
+     ):
+         return True
+
+     return False
+user = input("Enter a password: ").strip()
+print(password(user))
+
+
+
+'''Второе задание: число'''
+def close_num(numbers, target=0):
+    near = numbers[0]
+    minimum_diff = abs(numbers[0] - target)
+
+    for nums in numbers:
+        different = abs(nums - target)
+        if different < minimum_diff:
+            minimum_diff = different
+            near = nums
+    return near
+
+print(close_num([1,2,3],5))
