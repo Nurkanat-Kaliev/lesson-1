@@ -1,0 +1,53 @@
+# 1st task
+def closest_num(number_list,target):
+    return sorted(number_list,key= lambda x: abs(x-target))
+target1 = 1000
+target2 = 27
+
+closest1 = closest_num([312,996,31,1991,564],target1)
+closest2 = closest_num([3,20.17,5,4,108],target2)
+
+
+make_tuples1 = (target1, closest1)
+make_tuples2 = (target2, closest2)
+
+print(make_tuples1)
+print(make_tuples2)
+
+
+# 2nd task
+
+players = ["ronaldo","messi","Kaka","ibragimovich","alykulov","neuer"]
+
+mapped = list(map(lambda x: x.title(),players))
+print(mapped)
+
+clubs = ["barcelona","juventus","psg","benfica","orlando","portu","real madrid","chelsea"]
+
+filtered = list(filter(lambda x: x.count("e"),clubs))
+print(filtered)
+
+# 3rd task
+
+def data(numbers=[1,2,3,4,5]):
+    while True:
+        try:
+            lenght = len(numbers)
+            max_lenght = lenght - 1
+            user = int(input(f"Choose index:(0-{max_lenght}) "))
+            print(f"Here is your choosed idex's num: {numbers[user]}")
+        except:
+            print(f"You're allowed to choose only within given nums:(0-{max_lenght})")
+        else:
+            print(f"Your number {numbers[user]} is greater than {numbers[user]-1}")
+
+        finally:
+            exit_or_no = input("Print 'yes' if u want to exit,if u wanna stay u can click 'enter' ").lower()
+            if exit_or_no == "yes":
+                print("Good bye!")
+                break
+            else:
+                pass
+
+data((3,4,52,2,42,433,2,42))
+
