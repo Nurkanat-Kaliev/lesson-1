@@ -1,0 +1,39 @@
+
+
+def guess_number():
+    low = 1
+    high = 100
+    attempts = []
+    count = 0
+
+    while True:
+        mid = (low + high) // 2
+        attempts.append(mid)
+        count += 1
+
+        answer = input(f"Ваше число {mid}? (да /больше / меньше): ").strip().lower()
+
+        if answer == "да":
+            print(f"Угадал! Число: {mid}")
+            with open("results.txt", "w",encoding="utf-8") as file:
+                file.write(f"Загаданое число {mid}\n")
+                file.write(f"Количство попыток: {count}\n")
+                file.write(f"Сдлано попыток: {attempts}\n")
+            break
+
+        elif answer == "больше":
+            low = mid + 1
+            if low > high:
+                print("ошибка попробуйте заново")
+                break
+
+        elif answer == "меньше":
+            high = mid - 1
+            if high < low:
+                print("ошибка gопробуйте заново")
+                break
+
+        else:
+            print("Введите олько: да / больше / меньше")
+
+guess_number()
